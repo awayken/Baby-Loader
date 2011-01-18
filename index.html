@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Baby Loader Demo</title>
+	</head>
+	<body>
+		<h1>Baby Loader</h1>
+		
+		<p>Guess who's on the way!</p>
+
+		<script src="baby.js"></script>
+		
+		<h2>Baby</h2>
+		<p>Due 40 weeks from now, gender unknown.</p>
+		<script>
+			new BABY();
+		</script>
+		
+		<h2>Baby Girl</h2>
+		<p>Due sixteen weeks from now.</p>
+		<script>
+			new BABY({
+				duedate: new Date(Date.parse(new Date()) + (16 * 7 * 24 * 60 * 60 * 1000)),
+				gender: 'girl'
+			});
+		</script>
+		
+		<h2>Baby Boy</h2>
+		<p>Due three weeks from now.</p>
+		<script>
+			new BABY({
+				duedate: new Date(Date.parse(new Date()) + (3 * 7 * 24 * 60 * 60 * 1000)),
+				gender: 'boy'
+			});
+		</script>
+		
+		<h2>Ian</h2>
+		<p>Born on April 30th, 2010.</p>
+		<script>
+			new BABY({
+				duedate: '4/30/2010',
+				gender: 'boy'
+			});
+		</script>
+	</body>
+</html>
