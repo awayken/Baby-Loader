@@ -1,5 +1,5 @@
-﻿/*jslint evil: true, white: true, browser: true, onevar: true, undef: true, nomen: true, eqeqeq: true, plusplus: true, bitwise: true, regexp: true, newcap: true, immed: true, strict: true */
-/*global window: false */
+﻿/*jslint devel: false, browser: false, white: true */
+/*global $: false, window: false */
 
 (function () {
 	"use strict";
@@ -30,18 +30,18 @@
 		};
 		
 		this.update = function () {
-			var that = this, itemid = 'babyprogress_' + Date.parse(this.duedate), item = document.getElementById(itemid), percentdone = (1 - (this.duedate - new Date()) / this.gestation) * 100, s = '', h = '', done = '';
+			var that = this, itemid = 'babyprogress_' + Date.parse(this.duedate), item = window.document.getElementById(itemid), percentdone = (1 - (this.duedate - new Date()) / this.gestation) * 100, s = '', h = '', done = '';
 			
 			if (percentdone >= 100) {
 				percentdone = 100;
 			}
 			
 			if (!item) {
-				s = '<style>#' + itemid + '{border:1px solid #000;background:#eee;overflow:hidden;} #' + itemid + ' .percentdone{background-color:' + this.color + ';width:' + percentdone + '%;color:#fff;text-align:right;padding-right:2px;}</style>';
-				document.write(s);
+				s = '<style>#' + itemid + '{border:1px solid #000;background:#eee;overflow:hidden;} #' + itemid + '>div{background-color:' + this.color + ';width:' + percentdone + '%;color:#fff;text-align:right;padding-right:2px;}</style>';
+				window.document.write(s);
 				
-				h = '<div id="' + itemid + '" class="babyprogress"><div class="percentdone">' + percentdone + '%</div></div>';
-				document.write(h);
+				h = '<div id="' + itemid + '" class="babyprogress"><div>' + percentdone + '%</div></div>';
+				window.document.write(h);
 			} else {
 				done = item.childNodes[0];
 				done.innerHTML = percentdone + '%';
