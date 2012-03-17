@@ -37,7 +37,7 @@
 			}
 			
 			if (!item) {
-				s = '<style>#' + itemid + '{border:1px solid #000;background:#eee;overflow:hidden;} #' + itemid + '>div{background-color:' + this.color + ';width:' + percentdone + '%;color:#fff;text-align:right;padding-right:2px;}</style>';
+				s = '<style>#' + itemid + '{border:1px solid #000;background:#eee;overflow:hidden;-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;} #' + itemid + '>div{background-color:' + this.color + ';width:' + percentdone + '%;color:#fff;text-align:right;padding-right:2px;}</style>';
 				window.document.write(s);
 				
 				h = '<div id="' + itemid + '" class="babyprogress"><div>' + percentdone + '%</div></div>';
